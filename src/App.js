@@ -1,24 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+
+import NavBar from "./components/NavBar";
+import Header from "./components/Header";
+import InputArea from "./components/InputArea";
+import AddItems from "./components/AddItems";
 
 function App() {
+  const [items, setItems] = useState([]);
+
+  const handleItems = (value) => {
+    if (value.trim() !== "") {
+      setItems((prevItems) => [...prevItems, value]);
+    }
+  };
+
+  const handleDelete = (id) => {
+    setItems((prevItems) => {
+      return prevItems.filter((item, index) => {
+        return index !== id;
+      });
+    });
+  };
+
+  const handleEdit = (id, newText) => {
+    if (newText.trim() !== "") {
+      setItems((prevItems) => {
+        return prevItems.map((item, index) => {
+          if (index === id) {
+            return newText;
+          }
+          return item;
+        });
+      });
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+      <div className="app">
+        <Header />
+        <InputArea onAddItem={handleItems} />
+        {items.map((todoItems, index) => (
+          <AddItems
+            key={index}
+            id={index}
+            text={todoItems}
+            delete={handleDelete}
+            onEdit={handleEdit}
+          />
+        ))}
+      </div>
+    </>
   );
 }
 

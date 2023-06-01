@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* background-color: #e0e0e0; */
+  background-color: #b5b5b5;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  /* background-size: cover; */
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.heading {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+}
+
+h1,
+h2 {
+  font-weight: 400;
+  word-spacing: 4px;
+  font-size: 1.5em;
+  text-rendering: optimizeLegibility;
+  background: transparent;
+  /* border-radius: 24px; */
+  margin-left: 20px;
+}
+h2 {
+  margin-bottom: 40px;
+  margin-left: 45px;
+}
+
+.app {
+  margin-top: 2.5rem;
+  width: 50%;
+  padding: 40px 40px 40px 0;
+  background: transparent;
+  /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); */
+  /* backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px); */
+  border-radius: 24px;
+  /* border: 1px solid #fff; */
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input {
+  width: 94%;
+  height: 50px;
+  border-style: hidden;
+  background-color: #d3d3d3;
+  border-radius: 10px;
+  padding-left: 15px;
+  margin-left: 40px;
+}
+
+li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  /* text-align: center; */
+  width: 70%;
+  height: 50px;
+  border-style: hidden;
+  background-color: #fff;
+  padding-left: 15px;
+  top: 50%;
+  border-radius: 10px;
+
+  /* margin-right: 10%; */
+}
+.items {
+  width: 94%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  height: 50px;
+  border-style: hidden;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-left: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-icon,
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 50px;
+  width: 10%;
+  border-style: hidden;
+  background-color: #fff;
+  cursor: pointer;
+}
+.btn-icon:hover {
+  color: rgb(202, 29, 29);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.lastbtn {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+@media (max-width: 1129px) {
+  li {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
-  to {
-    transform: rotate(360deg);
+  .btn-icon,
+  button {
+    width: 20%;
   }
+}
+@media (max-width: 806px) {
+  .logo {
+    font-size: 20px;
+  }
+  h1,
+  h2 {
+    font-size: 20px;
+  }
+  input {
+    font-size: 15px;
+    height: 40px;
+  }
+  .app {
+    width: 80%;
+    height: 40px;
+  }
+  .items {
+    font-size: 15px;
+    height: 40px;
+  }
+  li {
+    width: 70%;
+    height: 40px;
+  }
+  .btn-icon,
+  button {
+    width: 20%;
+    height: 40px;
+  }
+}
+@media (max-width: 663px) {
+  .logo {
+    font-size: 20px;
+  }
+  h1,
+  h2 {
+    font-size: 17px;
+  }
+  input {
+    font-size: 12px;
+    height: 30px;
+  }
+  .app {
+    width: 90%;
+    height: 30px;
+  }
+  .items {
+    font-size: 12px;
+    height: 30px;
+  }
+  li {
+    width: 50%;
+    height: 30px;
+  }
+  .btn-icon,
+  button {
+    width: 20%;
+    height: 30px;
+  }
+}
+.logo-icon {
+  font-size: 1.8rem;
+  color: #0155ca;
+  box-shadow: 0 2px 2px 0 #b5b5b5;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
