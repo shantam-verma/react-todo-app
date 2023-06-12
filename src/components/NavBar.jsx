@@ -1,5 +1,4 @@
 import React from "react";
-import "../App.css";
 function NavBar() {
   return (
     <nav className="navbar navbar-transparent">

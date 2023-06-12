@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Jost", sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  font-size: 16px;
+  background-image: linear-gradient(
+    to left,
+    #c0caf4,
+    #adb7e1,
+    #9aa5cd,
+    #8893bb,
+    #7681a8,
+    #747ea4,
+    #737c9f,
+    #71799b,
+    #7e85a3,
+    #8c91ac,
+    #999db4,
+    #a7aabd
+  );
+  color: #000000;
+}
+
+input,
+li {
+  height: 45px;
+  border-style: hidden;
+  letter-spacing: 0.4px;
+}
+input {
+  background-color: #d3d3d3;
+  width: 400px;
+  border-radius: 10px;
+}
+
+li {
+  background-color: #fff;
+  width: 300px;
+  font-weight: 400;
+  list-style: none;
+  border-radius: 10px 0px 0px 10px;
+}

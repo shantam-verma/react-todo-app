@@ -1,39 +1,29 @@
 import { useState } from "react";
-import "./App.css";
-
+import { v4 as uuid } from "uuid";
 import NavBar from "./components/NavBar";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import InputArea from "./components/InputArea";
-import AddItems from "./components/AddItems";
+import AddItems from "./components/todo_list/AddItems";
 
 function App() {
   const [items, setItems] = useState([]);
 
   const handleItems = (value) => {
     if (value.trim() !== "") {
-      setItems((prevItems) => [...prevItems, value]);
+      const newItems = {
+        id: uuid(),
+        text: value,
+      };
+      setItems((prevItems) => [...prevItems, newItems]);
     }
   };
 
   const handleDelete = (id) => {
     setItems((prevItems) => {
-      return prevItems.filter((item, index) => {
-        return index !== id;
+      return prevItems.filter((item) => {
+        return item.id !== id;
       });
     });
-  };
-
-  const handleEdit = (id, newText) => {
-    if (newText.trim() !== "") {
-      setItems((prevItems) => {
-        return prevItems.map((item, index) => {
-          if (index === id) {
-            return newText;
-          }
-          return item;
-        });
-      });
-    }
   };
 
   return (
@@ -42,13 +32,12 @@ function App() {
       <div className="app">
         <Header />
         <InputArea onAddItem={handleItems} />
-        {items.map((todoItems, index) => (
+        {items.map((todoItems) => (
           <AddItems
-            key={index}
-            id={index}
-            text={todoItems}
+            key={todoItems.id}
+            id={todoItems.id}
+            text={todoItems.text}
             delete={handleDelete}
-            onEdit={handleEdit}
           />
         ))}
       </div>

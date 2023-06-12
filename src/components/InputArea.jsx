@@ -11,15 +11,16 @@ const InputArea = ({ onAddItem }) => {
   };
 
   return (
-    <>
+    <div className="container d-flex justify-content-center ps-5">
       <input
+        className="ps-2"
         type="text"
         placeholder="Write a new task.."
         value={inputValue}
         onKeyDown={handleKeyDown}
         onChange={(event) => setInputValue(event.target.value)}
       />
-    </>
+    </div>
   );
 };
 
