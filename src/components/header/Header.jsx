@@ -43,7 +43,7 @@ const Header = () => {
           <i
             className={`fa-regular fa-square-check pe-4 ${HeadingCSS.icon}`}
           ></i>
-          <h1 className="pe-5 me-5">{greeting}</h1>
+          <h1 className="pe-4 me-5">{greeting}</h1>
         </div>
         <h2 className="pe-5 me-2">
           it's {day}, {currentMonth} {currentDate}'
